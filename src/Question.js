@@ -1,12 +1,14 @@
 
 
 class Question {
-  constructor(text , correctAnswer) {
-    this.text = text;
-    this.answers= [];
+  constructor(question, correctAnswer, wrongAnswers) {
+    this.text = question;
     this.correctAnswer= correctAnswer;
+    wrongAnswers.push(correctAnswer);
+    this.answers= wrongAnswers;
     this.userAnswer= '';
   }
+
 
   submitAnswer(answer) {
     this.userAnswer = answer;
